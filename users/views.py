@@ -5,6 +5,9 @@ from rest_framework.views import APIView
 from .serializers import CustomUserSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import AllowAny
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
+from .models import NewUser
 
 
 class CustomUserCreate(APIView):
@@ -32,3 +35,21 @@ class BlacklistTokenUpdateView(APIView):
             return Response(status=status.HTTP_205_RESET_CONTENT)
         except Exception as e:
             return Response(status=status.HTTP_400_BAD_REQUEST)
+        
+
+class UserDetailsView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        print(request)
+        email = request.user.email
+        user = NewUser.objects.get_user_by_email(email)
+        if user is not None:
+            user_data = {
+                'id': user.id,
+                'email': user.email,
+                'edentoken': user.edentoken
+            }
+            return Response(user_data)
+        else:
+            return Response({'error': 'User not found'}, status=404)
