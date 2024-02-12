@@ -81,6 +81,7 @@ class DeletePost(generics.RetrieveDestroyAPIView):
 class CreatePost(APIView):
     permission_classes = [IsAuthenticated]
     parser_classes = [MultiPartParser, FormParser]
+    
 
     def post(self, request, format=None):
         print(request.data)
