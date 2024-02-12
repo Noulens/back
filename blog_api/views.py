@@ -8,6 +8,8 @@ from rest_framework import filters
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from rest_framework import filters
+from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework import status
 
 
 class PostUserWritePermission(BasePermission):
@@ -58,18 +60,17 @@ class PostListDetailfilter(generics.ListAPIView):
 
 
 class PostSearch(generics.ListAPIView):
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     filter_backends = [filters.SearchFilter]
     search_fields = ['^slug']
 
 
-class CreatePost(generics.CreateAPIView):
-    permission_classes = [IsAuthenticated]
-    queryset = Post.objects.all()
-    serializer_class = PostSerializer
-
+# class CreatePost(generics.CreateAPIView):
+#     permission_classes = [IsAuthenticated]
+#     queryset = Post.objects.all()
+#     serializer_class = PostSerializer
 
 class DeletePost(generics.RetrieveDestroyAPIView):
     permission_classes = [IsAuthenticated]
@@ -77,6 +78,18 @@ class DeletePost(generics.RetrieveDestroyAPIView):
     serializer_class = PostSerializer
 
 
+class CreatePost(APIView):
+    permission_classes = [IsAuthenticated]
+    parser_classes = [MultiPartParser, FormParser]
+
+    def post(self, request, format=None):
+        print(request.data)
+        serializer = PostSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     # def get_object(self, queryset=None, **kwargs):
     #     item = self.kwargs.get('pk')
