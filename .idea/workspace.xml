@@ -5,28 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="785ebd12-aa54-41c7-b300-374b189b7105" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/commands.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uppy/migrations/0002_auto_20200914_1537.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/asgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uppy/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/uppy/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uppy/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/uppy/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uppy/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/uppy/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uppy/migrations/0002_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uppy/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/uppy/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uppy/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/uppy/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uppy/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/uppy/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uppy/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/uppy/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uppy_api/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uppy_api/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/uppy_api/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uppy_api/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uppy_api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/uppy_api/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uppy_api/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/uppy_api/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uppy_api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/uppy_api/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uppy_api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/uppy_api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog_api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog_api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog_api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog_api/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +49,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/tnoulens/PycharmProjects/back/.venv/bin&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/tnoulens/PycharmProjects/back&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -130,6 +111,8 @@
       <workItem from="1707075471234" duration="1401000" />
       <workItem from="1707080720209" duration="1497000" />
       <workItem from="1707082238546" duration="456000" />
+      <workItem from="1707693730906" duration="111000" />
+      <workItem from="1707724356591" duration="316000" />
     </task>
     <servers />
   </component>
