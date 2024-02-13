@@ -10,6 +10,7 @@ from rest_framework.response import Response
 from rest_framework import filters
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework import status
+from django.http import JsonResponse
 
 
 class PostUserWritePermission(BasePermission):
@@ -43,7 +44,7 @@ class PostListDetailfilter(generics.ListAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     filter_backends = [filters.SearchFilter]
-    search_fields = ['^slug']
+    search_fields = ['^keywords']
 
     # '^' Starts-with search.
     # '=' Exact matches.
@@ -56,7 +57,7 @@ class PostSearch(generics.ListAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     filter_backends = [filters.SearchFilter]
-    search_fields = ['^slug']
+    search_fields = ['^keywords']
 
 
 
