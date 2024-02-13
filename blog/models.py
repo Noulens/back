@@ -32,6 +32,8 @@ class Post(models.Model):
     image = models.ImageField(_("Image"), upload_to=upload_to, null=True)
     excerpt = models.TextField(null=True)
     content = models.TextField()
+    keywords = models.TextField(null=True)
+    textocr = models.TextField(null=True)
     slug = models.SlugField(max_length=250, unique_for_date='published')
     published = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(

@@ -22,14 +22,6 @@ class PostUserWritePermission(BasePermission):
 
         return obj.author == request.user
 
-# User Filter
-# class PostList(generics.ListAPIView):
-#     permission_classes = [IsAuthenticated]
-#     serializer_class = PostSerializer
-
-#     def get_queryset(self):
-#         user = self.request.user
-#         return Post.objects.filter(author=user)
 
 class PostList(generics.ListAPIView):
     permission_classes = [IsAuthenticated]
@@ -67,10 +59,12 @@ class PostSearch(generics.ListAPIView):
     search_fields = ['^slug']
 
 
-# class CreatePost(generics.CreateAPIView):
-#     permission_classes = [IsAuthenticated]
-#     queryset = Post.objects.all()
-#     serializer_class = PostSerializer
+
+class EditPost(generics.UpdateAPIView):
+    permission_classes = [IsAuthenticated]
+    serializer_class = PostSerializer
+    queryset = Post.objects.all()
+
 
 class DeletePost(generics.RetrieveDestroyAPIView):
     permission_classes = [IsAuthenticated]
@@ -91,51 +85,6 @@ class CreatePost(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    # def get_object(self, queryset=None, **kwargs):
-    #     item = self.kwargs.get('pk')
-    #     return get_object_or_404(Post, slug=item)
-
-    # Define Custom Queryset
-    # def get_queryset(self):
-    #     return Post.objects.all()
-
-
-# class PostList(viewsets.ViewSet):
-#     permission_classes = [IsAuthenticated]
-#     queryset = Post.postobjects.all()
-
-#     def list(self, request):
-#         serializer_class = PostSerializer(self.queryset, many=True)
-#         return Response(serializer_class.data)
-
-#     def retrieve(self, request, pk=None):
-#         post = get_object_or_404(self.queryset, pk=pk)
-#         serializer_class = PostSerializer(post)
-#         return Response(serializer_class.data)
-
-    # def list(self, request):
-    #     pass
-
-    # def create(self, request):
-    #     pass
-
-    # def retrieve(self, request, pk=None):
-    #     pass
-
-    # def update(self, request, pk=None):
-    #     pass
-
-    # def partial_update(self, request, pk=None):
-    #     pass
-
-    # def destroy(self, request, pk=None):
-    #     pass
-
-    # class PostList(viewsets.ModelViewSet):
-    #     permission_classes = [IsAuthenticated]
-    #     queryset = Post.postobjects.all()
-    #     serializer_class = PostSerializer
 
 
 

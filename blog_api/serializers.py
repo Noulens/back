@@ -7,7 +7,7 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = ('category', 'id', 'title', 'image', 'file', 'slug', 'author',
-                  'excerpt', 'content', 'status')
+                  'excerpt', 'content', 'status', 'keywords', 'textocr')
 
 
 class UserRegisterSerializer(serializers.ModelSerializer):
